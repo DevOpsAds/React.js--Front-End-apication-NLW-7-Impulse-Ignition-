@@ -1,0 +1,24 @@
+legenda
+
+
+
+
+-Abertura do reposiótio Github
+
+-Criação da pasta local
+
+-Created project with vite
+
+informations:
+
+in link:
+https://vitejs.dev/guide/
+
+commands executed:
+# yarn
+yarn create vite XnameAplicationX --template react-ts
+yarn
+
+
+
+
