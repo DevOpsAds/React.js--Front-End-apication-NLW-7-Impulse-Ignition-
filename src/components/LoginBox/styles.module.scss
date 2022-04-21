@@ -1,0 +1,51 @@
+.loginBoxWrapper{
+    
+    height:100vh;
+    width:100%;
+    background:#d98719;
+    
+    color:#AC2342;
+    padding :20px 88px 0;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    img{
+        z-index: 0;
+    }
+
+    strong{
+
+        font-size:32px;
+        line-height:36px;
+    }
+
+    .signInWithGithub{
+
+        background:#7093DB;
+        color:#121214;
+        margin-top:16px;
+        padding:0 40px;
+        height:56px;
+        font-size:14px;
+        font-weight:bold;
+        text-transform:uppercase;
+        text-decoration:none;
+        
+        display:flex;
+        align-items:center;
+        justify-content: center;
+
+        &:hover{
+            filter:brightness(0.9)
+        }
+
+        svg{
+            margin-right:16px;
+        }
+
+
+
+
+    }
+
+}

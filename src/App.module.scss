@@ -1,0 +1,12 @@
+.contentWrapper{
+    max-width: 1200px;
+    height:100vg;
+    margin:0 auto;
+    // background:#151609;
+    background:linear-gradient(100deg, #151609 0%, #e98719 100%);
+    
+    display: grid;
+    grid-template-columns: 1fr 453px;
+    column-gap: 120px;
+    position: relative
+}

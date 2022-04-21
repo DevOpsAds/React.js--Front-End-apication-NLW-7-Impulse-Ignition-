@@ -1,0 +1,28 @@
+
+"global.css"
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Roboto, sans-serif;
+}
+body{
+	color: #e1e1e6;
+	background: #121216;
+}
+
+"app.module.sass"
+.contentWrapper{
+	max-width: 1200px;
+	heigth: 100vg;
+	marigin: 0 auto;
+	color: violet;
+
+	display: grid;
+	grid-template-columns: 1fr 453px;
+	column-gap: 120px;
+	position: relative;
+
+
+
+}
