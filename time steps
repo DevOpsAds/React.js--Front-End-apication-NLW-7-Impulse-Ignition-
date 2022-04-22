@@ -99,6 +99,7 @@ yarn add react-icons
 scss pronto  segue para criação de pasta services
 api.ts comunicação com servidor 
 inicie o servidor em um terminal
+e configure a atividade em api.ts
 
 
 

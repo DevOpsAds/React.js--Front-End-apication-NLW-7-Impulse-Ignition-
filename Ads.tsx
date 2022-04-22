@@ -53,46 +53,53 @@ export {App}
 
 
 "MessageList/index.tsx"
+
 import styles from './styles.module.scss'
 import logoImg from '../../assets/logo.png'
+import {api} from '../../services/api'
+type Message={
+	id:string;
+	text:string;
+	user:{
+		name:string;
+		avartar_url:string;
+	}
+}
 
 
 function MenssageList(){
+	const[message,setMessage] = userState <Message[]>([])
+
+
+userEffect(()=>{
+	api.get<Message[]>(messages/last3).then(response=>{
+		setMessage(respons.data)
+	})
+},[])
+
+
   return (
   <div className={styles.messageListWrapper}>
   	<img src={LogoImg} alt="doWhile"/>
 
        <ul className={styles.messageList>
-       	<li className={styles.message}>
-       	  <p className={styles.messageContent}> Não vejo a hora de começar esse evento, com certeza vai ser o melhor de todos os tempos,vamooo pra cima deles 🔥🔥🔥</p>
-       	  <div className={styles.messageUser}>
-       	  	<div> className={styles.userImage}>
-       	  		<img src="https://github.com/DevOpsAds.png" alt="João Batista"/>
-       	  	</div>
-       	  	<span> João Batista de Lima Júnior</span>
-       	  </div>	
-       	</li>
+       	{message.map(message => {
+       		return(
+       			<li key={message.id}className={styles.message}>
+       	  		<p className={styles.messageContent}>{message.text} </p>
+       	  		<div className={styles.messageUser}>
+       	  		<div> className={styles.userImage}>
+       	  		<img src={mensage.user.avatar_url} alt={message.user.name}/>
+       	  		</div>
+       	  		<span> {message.user.name}</span>
+       	  	</div>	
+       		</li>
 
-       	<li className={styles.message}>
-       	  <p className={styles.messageContent}> Não vejo a hora de começar esse evento, com certeza vai ser o melhor de todos os tempos,vamooo pra cima deles 🔥🔥🔥</p>
-       	  <div className={styles.messageUser}>
-       	  	<div> className={styles.userImage}>
-       	  		<img src="https://github.com/DevOpsAds.png" alt="João Batista"/>
-       	  	</div>
-       	  	<span> João Batista de Lima Júnior</span>
-       	  </div>	
-       	</li>
+       	   )
+       	})}
        </ul>
 
-       <li className={styles.message}>
-       	  <p className={styles.messageContent}> Não vejo a hora de começar esse evento, com certeza vai ser o melhor de todos os tempos,vamooo pra cima deles 🔥🔥🔥</p>
-       	  <div className={styles.messageUser}>
-       	  	<div> className={styles.userImage}>
-       	  		<img src="https://github.com/DevOpsAds.png" alt="João Batista"/>
-       	  	</div>
-       	  	<span> João Batista de Lima Júnior</span>
-       	  </div>	
-       	</div>
+    
 
   </div>
   )
@@ -255,3 +262,12 @@ export {LoginBox}
 }
 
 
+"src/sevices/api"
+
+import axios from "axios"
+
+const api =axios.create({
+	baseURL:"http://localhost:4000"
+})
+
+export{api}
